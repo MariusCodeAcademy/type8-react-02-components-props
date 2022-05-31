@@ -14,33 +14,34 @@ const card1Data = {
   text: 'Heloo from new york',
 };
 
+const cardsData = [
+  card1Data,
+  {
+    title: 'Paris',
+    image: parisImg,
+    date: '2020-06-15',
+    text: 'Welcome to Paris, eat a baguet',
+  },
+];
+
+function TestSpread(props) {
+  console.log('TestSpread props ===', props);
+  return <h2>Does the spread works? {props.title}</h2>;
+}
+
 function App() {
   return (
     <div className='App'>
       <MyBtn text='I am reusable component' />
-
+      <TestSpread {...card1Data} />
       {/* <CardImage img={parisImg} /> */}
       <h1 className='main-title'>Heloo again world</h1>
       <Icon icon='fa-facebook-official' />
       <Icon icon='fa-instagram' />
       <div className='card-container'>
-        <article className='card'>
-          <CardImage img={img1} />
-          <CardContent
-            title='New York'
-            date='Tue May 31 2022'
-            text='Welcome to new York, have a great time'
-          />
-        </article>
-        <article className='card'>
-          <CardImage img={parisImg} />
-          <CardContent
-            title='Paris'
-            date='Tue May 31 2019'
-            text='Welcome to Paris, eat a baguet'
-          />
-        </article>
-        <Card data={card1Data} />
+        <Card data={cardsData[0]} apple='orange' />
+        <Card data={cardsData[1]} />
+        {/* <Card data={cardsData[3]} /> */}
       </div>
     </div>
   );
