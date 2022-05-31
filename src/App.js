@@ -1,10 +1,6 @@
 import './App.css';
 import img1 from './newyork.jpg';
-
-function MyBtn(props) {
-  console.log('props ===', props);
-  return <button className='btn-black'>{props.text}</button>;
-}
+import MyBtn from './components/UI/MyBtn';
 
 function App() {
   return (
