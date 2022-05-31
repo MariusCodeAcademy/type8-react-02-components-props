@@ -3,6 +3,7 @@ import img1 from './assets/newyork.jpg';
 import parisImg from './assets/paris.jpg';
 import CardContent from './components/Card/CardContent';
 import CardImage from './components/Card/CardImage';
+import Icon from './components/UI/Icon';
 import MyBtn from './components/UI/MyBtn';
 
 const card1Data = {
@@ -16,8 +17,11 @@ function App() {
   return (
     <div className='App'>
       <MyBtn text='I am reusable component' />
+
       {/* <CardImage img={parisImg} /> */}
       <h1 className='main-title'>Heloo again world</h1>
+      <Icon icon='fa-facebook-official' />
+      <Icon icon='fa-instagram' />
       <article className='card'>
         <CardImage img={img1} />
         <CardContent
